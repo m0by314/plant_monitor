@@ -24,6 +24,7 @@ void setup(){
 
   /* --------- Sleep Configuration  --------- */
   esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);  // Timer for the wakeup of the ESP
+  esp_sleep_pd_config(ESP_PD_DOMAIN_RTC_PERIPH, ESP_PD_OPTION_OFF);
   /* ------------------------------- */
 
   /* -------- WatchDog configuration --------*/
