@@ -10,9 +10,14 @@
 #define WIFI_SSID ""     /* Replace with your wifi password */
 #define WIFI_PWD ""      /* Replace with your wifi password */
 
-#define FEED_NAME   "" 
+#define FEED_SOIL_MOISTURE   "/feeds/plant-1.soil-moisture"
+#define FEED_TEMPERATURE   "/feeds/plant-1.temperature" 
+#define FEED_HUMIDITY   "/feeds/plant-1.humidity"  
+
 /* --------------------------------------- */
 
+#define DHTPIN  14
+#define DHTTYPE DHT22
 
 /* Sleep Time */
 #define HOUR_TO_SLEEP 4ULL                        /* Sleep time between each measurement  */
@@ -22,8 +27,10 @@
 /* Adafruit MQTT */
 #define MQTT_HOST "io.adafruit.com"
 #define MQTT_PORT  8883
-#define MQTT_TOPIC  concat(MQTT_USER, FEED_NAME)
 
+#define TOPIC_SOIL_MOISTURE  concat(MQTT_USER, FEED_SOIL_MOISTURE)
+#define TOPIC_TEMPERATURE  concat(MQTT_USER, FEED_TEMPERATURE)
+#define TOPIC_HUMIDITY  concat(MQTT_USER, FEED_HUMIDITY)
 
 const char* _adafruit_root_certificate = R"EOF(
 -----BEGIN CERTIFICATE-----
